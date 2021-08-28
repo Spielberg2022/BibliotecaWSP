@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BibliotecaWSP", "BibliotecaWSP.csproj", "{7CCA9306-6FC8-44F5-9BBB-0B878E242586}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2924BFD7-6116-4CA6-A957-B356A78FF7A1}"
+	ProjectSection(SolutionItems) = preProject
+		CriarBD-BibliotecaWS.sql = CriarBD-BibliotecaWS.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CCA9306-6FC8-44F5-9BBB-0B878E242586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CCA9306-6FC8-44F5-9BBB-0B878E242586}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CCA9306-6FC8-44F5-9BBB-0B878E242586}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CCA9306-6FC8-44F5-9BBB-0B878E242586}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F857345-E4D0-4E81-890A-66F034734101}
+	EndGlobalSection
+EndGlobal

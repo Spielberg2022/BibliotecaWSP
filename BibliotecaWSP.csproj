@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>icons8-livros-100.ico</ApplicationIcon>
+    <StartupObject></StartupObject>
+    <Company>Wesley'S Software</Company>
+    <Authors>Wesley Silveira de Paula</Authors>
+    <Description>Aplicativo criado como trabalho da aula de Programação I - 3º Período de Sistemas de Informação da UNIVERSIDADE DO ESTADO DE MINAS GERAIS - UEMG. Para qualquer informação ou contato enviar e-mail para wesleysdepaula@outlook.com</Description>
+    <Copyright>Copyright ©  2021</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Model\Emprestimo.cs~RF46a4c9b0.TMP" />
+    <None Remove="Model\Opcoes.cs~RF45e731ad.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.26" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
