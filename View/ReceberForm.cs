@@ -99,6 +99,10 @@ namespace BibliotecaWSP.View
                     }
                     livrosDataGridView.DataSource = new DataTable();
                 }
+                MessageBox.Show("Livros devolvidos com sucesso!",
+                                "Informação",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
             }
             else
                 MessageBox.Show("Lista de livros para serem devolvidos vazia.\nSelecione os livros que deseja receber na tabela ao lado e vá clicando em confirmar...",

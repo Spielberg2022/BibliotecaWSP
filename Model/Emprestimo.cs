@@ -93,7 +93,7 @@ namespace BibliotecaWSP.Model
 
         public void LocalizarADevolverPorCodigoAluno(InterfaceBD conexaoBD)
         {
-            Localizar(conexaoBD, $"SELECT liv.codigo, liv.ISBN, liv.Titulo, emp.DataEmprestimo, emp.DataParaDevolucao, emp.DataDevolucao FROM emprestimo AS emp INNER JOIN livro AS liv ON emp.CodLivro = liv.Codigo WHERE emp.CodAluno = { this.CodAluno} AND emp.datadevolucao is null");
+            Localizar(conexaoBD, $"SELECT liv.codigo, liv.ISBN, liv.Titulo, emp.DataEmprestimo, emp.DataParaDevolucao, emp.DataDevolucao FROM emprestimo AS emp INNER JOIN livro AS liv ON emp.CodLivro = liv.Codigo WHERE emp.CodAluno = { this.CodAluno} AND emp.datadevolucao is null ORDER BY emp.DataEmprestimo DESC");
         }
 
         public bool Devolver(InterfaceBD conexaoBD, int codLivro, int codAluno)
@@ -105,7 +105,7 @@ namespace BibliotecaWSP.Model
             {
                 if (conexaoBD.conectar())
                 {
-                    sql = $"UPDATE Emprestimo SET DataDevolucao = '{DateTime.Now.Year}-{DateTime.Now.Month}-{DateTime.Now.Day}' WHERE CodLivro = {codLivro} AND CodAluno = {codAluno}";
+                    sql = $"UPDATE Emprestimo SET DataDevolucao = '{DateTime.Now.Year}-{DateTime.Now.Month}-{DateTime.Now.Day}' WHERE CodLivro = {codLivro} AND CodAluno = {codAluno} AND DataDevolucao IS NULL";
                     comando = new MySqlCommand(sql, conexaoBD.getConexao());
                     comando.ExecuteNonQuery();
                     comando.Dispose();
@@ -128,7 +128,7 @@ namespace BibliotecaWSP.Model
 
         public void LocalizarPorCodigoAluno(InterfaceBD conexaoBD)
         {
-            Localizar(conexaoBD, $"SELECT liv.codigo, liv.ISBN, liv.Titulo, emp.DataEmprestimo, emp.DataParaDevolucao, emp.DataDevolucao FROM emprestimo AS emp INNER JOIN livro AS liv ON emp.CodLivro = liv.Codigo WHERE emp.CodAluno = { this.CodAluno}");
+            Localizar(conexaoBD, $"SELECT liv.codigo, liv.ISBN, liv.Titulo, emp.DataEmprestimo, emp.DataParaDevolucao, emp.DataDevolucao FROM emprestimo AS emp INNER JOIN livro AS liv ON emp.CodLivro = liv.Codigo WHERE emp.CodAluno = { this.CodAluno} ORDER BY emp.DataEmprestimo DESC");
         }
 
         public void Localizar(InterfaceBD conexaoBD, string sqlComando)
